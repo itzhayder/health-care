@@ -33,6 +33,7 @@ export const ICONS_NAME = {
     "arrow-down": "arrow-down",
     "arrow-up": "arrow-up",
     "arrow-right": "arrow-right",
+    "arrow-left": "arrow-left",
     "arrow-circle-down": "arrow-circle-down",
     "arrow-circle-up": "arrow-circle-up",
     info: "info",
@@ -50,4 +51,6 @@ export const ICONS_NAME = {
     settings: "settings",
     car: "car",
     star: "star",
+    starFill: "starFill",
+    dollar: "dollar",
 };

@@ -2,10 +2,10 @@ import { useRouter } from "expo-router";
 import { useState } from "react";
 import { FlatList, Image, Pressable, View } from "react-native";
 
-import CustomerScheduleCard from "../../../components/cards/customer-schedule-card";
-import HorizontalLine from "../../../components/horizontal-line";
-import Icon from "../../../components/icon";
-import { ICONS_NAME } from "../../../constants/iconsName";
+import CustomerScheduleCard from "../../../../components/cards/customer-schedule-card";
+import HorizontalLine from "../../../../components/horizontal-line";
+import Icon from "../../../../components/icon";
+import { ICONS_NAME } from "../../../../constants/iconsName";
 
 import Button from "@/components/buttons/button";
 import Layout from "@/components/layout";
@@ -85,7 +85,7 @@ export default function Index() {
     const router = useRouter();
 
     return (
-        <Layout header>
+        <Layout drawerButton>
             <View className="w-full flex-1">
                 {isProfileCompleted ? (
                     <>
@@ -101,7 +101,7 @@ export default function Index() {
                                         className="flex-1 bg-teal-500"
                                         titleClassName="text-xs"
                                         onPress={() => {
-                                            router.navigate("/home");
+                                            router.push("/home/create");
                                         }}
                                     />
                                     <Button
@@ -109,7 +109,7 @@ export default function Index() {
                                         className="flex-1"
                                         titleClassName="text-xs"
                                         onPress={() => {
-                                            router.navigate("/account");
+                                            router.push("/home/create");
                                         }}
                                     />
                                 </View>
@@ -119,7 +119,7 @@ export default function Index() {
                                 <View className="mt-10">
                                     <Typography variant="h1">Upcoming Schedules</Typography>
                                     <CustomerScheduleCard
-                                        imageSource={require("../../../assets/images/woman-1.jpg")}
+                                        imageSource={require("../../../../assets/images/woman-1.jpg")}
                                         time="9:00 am, 25 April"
                                         name="Catherine Dsourza"
                                         rate={350}
@@ -128,7 +128,7 @@ export default function Index() {
                                         type="Medication Support"
                                     />
                                     <CustomerScheduleCard
-                                        imageSource={require("../../../assets/images/man-1.jpg")}
+                                        imageSource={require("../../../../assets/images/man-1.jpg")}
                                         time="10:00 pm, 30 April"
                                         name="John Doe"
                                         rate={500}
@@ -137,7 +137,7 @@ export default function Index() {
                                         type="Home Care"
                                     />
                                     <CustomerScheduleCard
-                                        imageSource={require("../../../assets/images/woman-1.jpg")}
+                                        imageSource={require("../../../../assets/images/woman-1.jpg")}
                                         time="9:00 am, 25 April"
                                         name="Catherine Dsourza"
                                         rate={350}
@@ -146,7 +146,7 @@ export default function Index() {
                                         type="Medication Support"
                                     />
                                     <CustomerScheduleCard
-                                        imageSource={require("../../../assets/images/man-1.jpg")}
+                                        imageSource={require("../../../../assets/images/man-1.jpg")}
                                         time="10:00 pm, 30 April"
                                         name="John Doe"
                                         rate={500}

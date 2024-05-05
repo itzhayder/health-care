@@ -1,4 +1,11 @@
-import { AntDesign, FontAwesome, FontAwesome5, Ionicons, MaterialIcons } from "@expo/vector-icons";
+import {
+    AntDesign,
+    Feather,
+    FontAwesome,
+    FontAwesome5,
+    Ionicons,
+    MaterialIcons,
+} from "@expo/vector-icons";
 import React from "react";
 
 import { ICONS_NAME } from "../constants/iconsName";
@@ -38,6 +45,7 @@ const RenderIconComponent = {
     [ICONS_NAME["arrow-down"]]: (props) => <FontAwesome5 name="angle-down" {...props} />,
     [ICONS_NAME["arrow-up"]]: (props) => <FontAwesome5 name="angle-up" {...props} />,
     [ICONS_NAME["arrow-right"]]: (props) => <FontAwesome5 name="angle-right" {...props} />,
+    [ICONS_NAME["arrow-left"]]: (props) => <Feather name="arrow-left" {...props} />,
     [ICONS_NAME["arrow-circle-down"]]: (props) => (
         <FontAwesome5 name="arrow-circle-down" {...props} />
     ),
@@ -57,6 +65,8 @@ const RenderIconComponent = {
     [ICONS_NAME.settings]: (props) => <Ionicons name="settings" {...props} />,
     [ICONS_NAME.car]: (props) => <FontAwesome5 name="car" {...props} />,
     [ICONS_NAME.star]: (props) => <AntDesign name="staro" {...props} />,
+    [ICONS_NAME.starFill]: (props) => <AntDesign name="star" {...props} />,
+    [ICONS_NAME.dollar]: (props) => <FontAwesome name="dollar" {...props} />,
 };
 
 const Icon = ({ color, name, size, style, ...props }) => {

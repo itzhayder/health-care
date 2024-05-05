@@ -2,12 +2,27 @@ import React from "react";
 import { Image, View } from "react-native";
 
 import { ICONS_NAME } from "../../constants/iconsName";
+import { cn } from "../../utilities/cn";
 import Icon from "../icon";
 import Typography from "../typography";
 
-const CustomerScheduleCard = ({ imageSource, type, rating, title, time, rate, name }) => {
+const CustomerScheduleCard = ({
+    imageSource,
+    type,
+    rating,
+    title,
+    time,
+    rate,
+    name,
+    className,
+}) => {
     return (
-        <View className="mt-3 border border-neutral-200 rounded-lg flex-row overflow-hidden">
+        <View
+            className={cn(
+                "mt-3 border border-neutral-200 rounded-lg flex-row overflow-hidden",
+                className,
+            )}
+        >
             <View className="flex-1 items-center bg-violet-100">
                 {/* <Icon name={ICONS_NAME.calendar} size={16} /> */}
                 <Image className="flex-1 w-full h-full" source={imageSource} resizeMode="cover" />
@@ -22,12 +37,16 @@ const CustomerScheduleCard = ({ imageSource, type, rating, title, time, rate, na
                         >
                             {type}
                         </Typography>
-                        <View className="flex-row items-center gap-1">
-                            <Icon name={ICONS_NAME.star} color="#f97316" />
-                            <Typography variant="small1" className="pt-1 text-orange-500">
-                                {rating}
-                            </Typography>
-                        </View>
+                        {rating ? (
+                            <View className="flex-row items-center gap-1">
+                                <Icon name={ICONS_NAME.star} color="#f97316" />
+                                <Typography variant="small1" className="pt-1 text-orange-500">
+                                    {rating}
+                                </Typography>
+                            </View>
+                        ) : (
+                            <></>
+                        )}
                     </View>
                     <Typography
                         variant="h3"

@@ -10,11 +10,14 @@ import { Slot, Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 
+import "../global.css";
+import { View } from "react-native";
+import Toast, { ErrorToast, SuccessToast } from "react-native-toast-message";
+
 import { ASSET } from "../constants/assets";
 import { SessionProvider } from "../contexts/authContext";
 
-import "../global.css";
-import { View } from "react-native";
+import Icon from "@/components/icon";
 
 export {
     // Catch any errors thrown by the Layout component.
@@ -71,6 +74,49 @@ export default function Root() {
                     }}
                 /> */}
             </Stack>
+            <Toast
+                config={{
+                    success: (props) => (
+                        <SuccessToast
+                            {...props}
+                            style={{ borderLeftColor: "white" }}
+                            contentContainerStyle={{
+                                paddingRight: 12,
+                                paddingLeft: 0,
+                            }}
+                            text1Style={{
+                                fontSize: 16,
+                                fontFamily: "PoppinsSemiBold",
+                                color: "#14b8a6",
+                            }}
+                            text2Style={{
+                                fontSize: 13,
+                                fontFamily: "PoppinsRegular",
+                            }}
+                            renderLeadingIcon={() => (
+                                <View className="justify-center p-3">
+                                    <Icon name="check" size={18} color="#14b8a6" />
+                                </View>
+                            )}
+                        />
+                    ),
+                    error: (props) => (
+                        <ErrorToast
+                            {...props}
+                            text2Style={{
+                                fontSize: 13,
+                                fontFamily: "PoppinsRegular",
+                            }}
+                            // renderLeadingIcon={() => (
+                            //     <View className="justify-center p-3">
+                            //         <Icon name="check" size={18} color="green" />
+                            //     </View>
+                            // )}
+                        />
+                    ),
+                }}
+                position="top"
+            />
         </SessionProvider>
     );
 }

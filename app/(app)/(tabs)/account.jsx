@@ -4,18 +4,18 @@ import { ScrollView, Switch, Text, TouchableOpacity, View } from "react-native";
 import Collapsible from "react-native-collapsible";
 import Accordion from "react-native-collapsible/Accordion";
 
-import Button from "../../components/buttons/button";
-import Checkbox from "../../components/checkbox";
-import Dropdown from "../../components/dropdown";
-import FileInput from "../../components/file-input";
-import Icon from "../../components/icon";
-import Layout from "../../components/layout";
-import RadioInput from "../../components/radio-input";
-import TextInput from "../../components/text-inputs/text-input";
-import Typography from "../../components/typography";
+import Button from "../../../components/buttons/button";
+import Checkbox from "../../../components/checkbox";
+import Dropdown from "../../../components/dropdown";
+import FileInput from "../../../components/file-input";
+import Icon from "../../../components/icon";
+import Layout from "../../../components/layout";
+import RadioInput from "../../../components/radio-input";
+import TextInput from "../../../components/text-inputs/text-input";
+import Typography from "../../../components/typography";
 
 // import CollapsibleRow from "@/components/collapsible-row";
-import { ICONS_NAME } from "../../constants/iconsName";
+import { ICONS_NAME } from "../../../constants/iconsName";
 
 import { useSession } from "@/contexts/authContext";
 
@@ -240,7 +240,7 @@ export default function Profile() {
     };
 
     return (
-        <Layout>
+        <Layout headerTitle="Account" drawerButton>
             <View className="flex-1 justify-between">
                 <Accordion
                     sectionContainerStyle={{ paddingBottom: 20 }}

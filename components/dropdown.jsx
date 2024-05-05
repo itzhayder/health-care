@@ -187,7 +187,7 @@ const Dropdown = ({
     }, [control?._formValues?.[name]]);
 
     return (
-        <View className="relative z-10" style={style}>
+        <View className="relative z-10 px-5 mb-4" style={style}>
             <Controller
                 control={control}
                 name={name}
